@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 
     val kotlinVersion = "1.6.21"
-    val springVersion = "2.7.1"
+    val springVersion = "2.6.9"
     val dependencyManagerVersion = "1.0.11.RELEASE"
 
     id("org.springframework.boot") version springVersion
@@ -50,7 +50,6 @@ dependencies {
     testAnnotationProcessor("com.querydsl:querydsl-apt:$querydslVersion:jpa")
 
     runtimeOnly("com.h2database:h2")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
