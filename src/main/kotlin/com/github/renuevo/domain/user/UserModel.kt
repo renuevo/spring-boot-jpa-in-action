@@ -17,11 +17,9 @@ data class UserModel(
 }
 
 fun UserModel.Companion.createRandUser(): UserModel {
-    val charPool: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-    val name = (1..5)
-        .map { _ -> kotlin.random.Random.nextInt(0, charPool.size) }
-        .map { charPool[it] }
-        .joinToString { "" }
+    val charPool: List<Char> = ('a'..'z') + ('A'..'Z')
+    val name = (0..5)
+        .map { _ -> charPool[kotlin.random.Random.nextInt(charPool.size)] }.joinToString("")
 
     return UserModel(
         name = name,
