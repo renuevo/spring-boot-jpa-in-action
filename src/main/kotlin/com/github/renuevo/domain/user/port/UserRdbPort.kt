@@ -4,10 +4,12 @@ import com.github.renuevo.domain.user.UserModel
 
 interface UserRdbPort {
 
-    fun save(userModel: UserModel): UserModel
+  fun update(userModel: UserModel): UserModel
 
-    fun findById(userId: Long): UserModel?
+  fun save(userModel: UserModel): UserModel
 
-    fun findAllByUsers(): List<UserModel>
+  fun findById(userId: Long): UserModel?
+
+  fun findAllByUsers(): List<UserModel>
 
 }

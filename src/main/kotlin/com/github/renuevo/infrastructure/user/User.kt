@@ -1,24 +1,25 @@
 package com.github.renuevo.infrastructure.user
 
-import com.github.renuevo.domain.user.Gender
 import com.github.renuevo.domain.user.UserModel
 import com.github.renuevo.infrastructure.common.AuditEntity
+import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
 @Table
 @Entity
+@DynamicUpdate
 data class User(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    val name: String,
+    var name: String,
 
-    val age: Long,
+    var age: Long,
 
     @Enumerated(EnumType.STRING)
-    val gender: Gender
+    var gender: UserModel.Gender
 
 ) : AuditEntity()
 
@@ -39,6 +40,6 @@ fun User.toModel() = UserModel(
     createdBy = createdBy,
     createdAt = createdAt,
     updatedBy = updatedBy,
-    updatedAt = updatedAt,
+    updatedAt = updatedAt
 )
 

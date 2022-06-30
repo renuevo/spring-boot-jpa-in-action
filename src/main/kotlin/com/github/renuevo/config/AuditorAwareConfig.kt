@@ -9,6 +9,6 @@ import java.util.*
 @EnableJpaAuditing
 class AuditorAwareConfig : AuditorAware<String> {
 
-    override fun getCurrentAuditor(): Optional<String> = Optional.of("테스트 생생자")
+  override fun getCurrentAuditor(): Optional<String> = Optional.of("테스트 생생자")
 
 }

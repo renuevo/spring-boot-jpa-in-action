@@ -1,6 +1,6 @@
 package com.github.renuevo.infrastructure.user
 
-import org.springframework.data.repository.CrudRepository
+import org.springframework.data.jpa.repository.JpaRepository
 
-interface UserRepository : CrudRepository<User, Long> {
+interface UserRepository : JpaRepository<User, Long> {
 }

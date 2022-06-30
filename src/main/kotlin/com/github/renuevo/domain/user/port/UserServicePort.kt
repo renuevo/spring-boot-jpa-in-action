@@ -6,14 +6,14 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional(readOnly = true)
 interface UserServicePort {
 
-    fun getUserInfo(userId: Long): UserModel
+  fun getUserInfo(userId: Long): UserModel
 
-    @Transactional
-    fun createUser(): UserModel
+  @Transactional
+  fun createUser(): UserModel
 
-    fun getUsersInfo(): List<UserModel>
+  fun getUsersInfo(): List<UserModel>
 
-    @Transactional
-    fun updateUser(userModel: UserModel): UserModel
+  @Transactional
+  fun updateUser(userModel: UserModel): UserModel
 
 }

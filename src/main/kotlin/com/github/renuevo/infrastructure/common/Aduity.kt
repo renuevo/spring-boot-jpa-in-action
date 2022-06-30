@@ -14,17 +14,20 @@ import javax.persistence.MappedSuperclass
 @EntityListeners(value = [AuditingEntityListener::class])
 abstract class AuditEntity(
 
-    @CreatedBy
-    @Column(updatable = false)
-    var createdBy: String = "",
+  @CreatedBy
+  @Column(updatable = false, nullable = false)
+  var createdBy: String = "",
 
-    @CreatedDate
-    @Column(updatable = false)
-    var createdAt: LocalDateTime = LocalDateTime.MIN,
+  @CreatedDate
+  @Column(updatable = false, nullable = false)
+  var createdAt: LocalDateTime = LocalDateTime.MIN,
 
-    @LastModifiedBy
-    var updatedBy: String = "",
+  @LastModifiedBy
+  @Column(nullable = false)
+  var updatedBy: String = "",
 
-    @LastModifiedDate
-    var updatedAt: LocalDateTime = LocalDateTime.MIN
+  @LastModifiedDate
+  @Column(nullable = false)
+  var updatedAt: LocalDateTime = LocalDateTime.MIN
+
 )
